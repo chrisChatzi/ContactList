@@ -1,4 +1,4 @@
-# TicTacToe
+# Contact List
 
 Christos Chatziioannidis
 
