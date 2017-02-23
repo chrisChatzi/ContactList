@@ -1,0 +1,52 @@
+{
+  "name": "Contacts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./server/server.js",
+    "copy": "npm run copyBundle && npm run copyCss",
+    "build": "npm run copy && node ./scripts/zip.js",
+    "test": "karma start karma.conf.js"
+  },
+  "author": "chrisChatzi <christos.chatziioannidis@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "ajax-query": "^1.0.10",
+    "express": "*",
+    "karma-htmlfile-reporter": "^0.3.5",
+    "request": "*",
+    "websql": "^0.4.4",
+    "websql-json": "^0.1.2"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babelify": "*",
+    "browserify": "*",
+    "copyfiles": "*",
+    "fastclick": "*",
+    "grunt": "*",
+    "grunt-babel": "*",
+    "grunt-browserify": "*",
+    "grunt-eslint": "^19.0.0",
+    "grunt-sass": "*",
+    "jasmine-core": "*",
+    "jasmine-es6": "*",
+    "jquery": "*",
+    "karma": "*",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "*",
+    "karma-jasmine": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-redux": "*",
+    "react-router": "*",
+    "redux": "*",
+    "redux-thunk": "*",
+    "watchify": "^3.8.0",
+    "zip-folder": "*"
+  },
+  "repository": "https://github.com/chrisChatzi/Contacts.git"
+}

@@ -1,0 +1,262 @@
+$font: 'christos', Serif;
+$borderColor: #ddd;
+$mainBlack : #242428;
+$blackFont : #444;
+$backgroundBlue: #334454;
+$mainBlue: #005792;
+$mainBlueLight: #3498db;
+$mainGreen: #27ae60;
+$mainGreenLight: #2ecc71;
+$mainGrey: #9fa7b8;
+$mainRed: #c0392b;
+
+/*mixins*/
+	/*set element with absolute position*/
+	@mixin setAbsolute($top, $bottom, $left, $right, $width, $height){
+		position: absolute;
+		@if $top != "" { top: $top; }
+		@if $bottom != "" { bottom: $bottom; }
+		@if $left != "" { left: $left; }
+		@if $right != "" { right: $right; }
+		@if $width != "" { width: $width; }
+		@if $height != "" { height: $height; }
+	}
+	/*set an element*/
+	@mixin setDimensions($float, $width, $height, $lineHeight, $margin, $padding){
+		@if $float != "" { float: $float; }
+		@if $width != "" { width: $width; }
+		@if $height != "" { height: $height; }
+		@if $lineHeight != "" { line-height: $lineHeight; }
+		@if $margin != "" { margin: $margin; }
+		@if $padding != "" { padding: $padding; }
+	}
+	/*set colors of element*/
+	@mixin setColors($color, $back){
+		@if $back != "" { background: $back; }
+		@if $color != "" { color: $color; }
+	}
+	/*set border of element*/
+	@mixin setBorders($radius, $border){
+		@if $radius != "" { border-radius: $radius; }
+		@if $border != "" { border: $border; }
+	}
+	/*set element hover*/
+	@mixin setHover($trans, $color, $back){
+		&:hover {
+			@if $trans != ""{
+				transition : $trans;
+			}@else{
+				transition: 0.5s;
+			}
+			@if $back != "" { background: $back; }
+			@if $color != "" { color: $color; }
+		}
+	}
+
+/*general*/
+	@font-face {
+		font-family: 'christos';
+		font-style: normal;
+		font-weight: normal;
+		src: url('./fonts/Quicksand_Book.otf') format('opentype');
+	}
+
+	html, body {
+		font-family: $font;
+		margin: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+		text-align: center;
+		background: #f5f5f5;
+		color: #fff;
+		-ms-touch-action: manipulation;
+		touch-action: manipulation;
+	}
+	input, select{
+		font-family: 'christos', Serif;
+		@include setDimensions("", auto, 32px, 32px, 5px 0, 0 5px);
+		@include setBorders(4px, 1px solid #ddd);
+		box-sizing: border-box;
+		@include setColors($blackFont, #f2f2f5);
+		text-align: center;
+	}
+	select{
+		margin: 0 2px;
+	}
+	button{
+		@include setColors(#fff, #27ae60);
+		padding: 5px 10px;
+		cursor: pointer;
+		height: 30px;
+		white-space: normal;
+		width: auto;
+		box-sizing: border-box;
+		outline: none;
+		border: 0;
+		border-radius: 4px;
+		&:hover{ opacity: 0.75; }
+	}
+	.buttonA{
+		width: 65px;
+		background: transparent;
+		border: 1px solid #fff;
+		border-radius: 14px;
+		@include setColors(#fff, transparent);
+		&:hover{ opacity: 1; }
+	}
+	.buttonB{
+		width: 65px;
+		background: transparent;
+		border: 1px solid #fff;
+		border-radius: 14px;
+		@include setColors(#3498db, #fff);
+		&:hover{ opacity: 1; }
+	}
+
+/*MENU*/
+	.menu{
+		background: #3498db;
+		@include setDimensions("", 100%, 50px, 50px, 0, 0);
+		border-bottom: 1px solid #ddd;
+		box-sizing: border-box;
+		.menu-item{
+			float: left;
+			padding: 0 20px;
+			@media (max-width: 700px) {
+				padding: 0 10px;
+			}
+			@media (max-width: 550px) {
+				padding: 0;
+				width: 100%;
+				float: center;
+			}
+		}
+		.right{
+			float: right;
+			border-right: 0;
+			@media (max-width: 700px) {
+				padding: 0 10px;
+			}
+			@media (max-width: 550px) {
+				padding: 0;
+				width: 100%;
+				float: center;
+			}
+		}
+		@media (max-width: 550px) {
+			height: 100px;
+		}
+		@media (max-width: 300px) {
+			height: 150px;
+		}
+	}
+
+/*CONTACT*/
+	.contacts{
+		color: #2c3e50;
+		.no{
+			margin-top: 15px;
+		}
+	}
+	.contact{
+		@include setDimensions(left, 31%, auto, "", 10px 1%, 10px);
+		@include setColors(#2c3e50, #fff);
+		position: relative;
+		border: 1px solid #ddd;
+		box-sizing: border-box;
+		.title{
+			color: #242428;
+			height: 40px;
+			font-weight: bold;
+			font-size: 20px;
+			margin-bottom: 5px;
+		}
+		.contact-row{
+			height: 30px;
+			line-height: 30px;
+			.key{
+				float: left;
+				width: 50px;
+			}
+			.value{
+				text-align: left;
+				float: left;
+			}
+		}
+		.delete{
+			@include setAbsolute(0, auto, auto, 0, 30px, 30px);
+			line-height: 30px;
+			margin: 10px;
+			cursor: pointer;
+			&:hover{
+				transition : 0.5s;
+				color: $mainRed;
+			};
+		}
+		.edit{
+			@include setAbsolute(auto, 0, auto, 0, 30px, 30px);
+			line-height: 30px;
+			margin: 10px;
+			cursor: pointer;
+			&:hover{
+				transition : 0.5s;
+				color: $mainGrey;
+			};
+		}
+		@media (max-width: 900px) {
+			width: 48%;
+		}
+		@media (max-width: 700px) {
+			width: 98%;
+		}
+	}
+	.del{border-color: $mainRed;}
+
+/*ADD*/
+	.add{
+		@include setAbsolute(auto, 0, auto, 0, 50px, 50px);
+		position: fixed;
+		line-height: 50px;
+		border-radius: 50px;
+		margin: 20px;
+		font-size: 24px;
+		@include setColors(#fff, #27ae60);
+		cursor: pointer;
+		&:hover{ opacity: 0.75; }
+	}
+
+/*POPUP*/
+	.popup{
+		z-index: 3;
+		@include setAbsolute(0, 0, 0, 0, 100%, 100%);
+		background: rgba(0,0,0,0.33);
+		.contact{
+			background: #fff;
+			@include setAbsolute(50%, auto, 50%, auto, 270px, 400px);
+			margin-top: -200px;
+			margin-left: -135px;
+			border: 1px solid #ddd;
+			padding: 0;
+			box-sizing: border-box;
+			.contact-row{
+				height: 60px;
+				line-height: 60px;
+				.key{
+					float: left;
+					width: 20%;
+				}
+				.value{
+					float: left;
+					width: 80%;
+					.valueError{
+						background: #fcc;
+					}
+				}
+			}
+			.title{
+				height: 40px;
+				line-height: 40px;
+				border-bottom: 1px solid #ccc;
+			}
+		}
+	}

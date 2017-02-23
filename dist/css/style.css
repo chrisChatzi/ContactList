@@ -1,0 +1,247 @@
+/*mixins*/
+/*set element with absolute position*/
+/*set an element*/
+/*set colors of element*/
+/*set border of element*/
+/*set element hover*/
+/*general*/
+@font-face {
+  font-family: 'christos';
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/Quicksand_Book.otf") format("opentype"); }
+
+html, body {
+  font-family: "christos", Serif;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  background: #f5f5f5;
+  color: #fff;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
+
+input, select {
+  font-family: 'christos', Serif;
+  width: auto;
+  height: 32px;
+  line-height: 32px;
+  margin: 5px 0;
+  padding: 0 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  background: #f2f2f5;
+  color: #444;
+  text-align: center; }
+
+select {
+  margin: 0 2px; }
+
+button {
+  background: #27ae60;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  height: 30px;
+  white-space: normal;
+  width: auto;
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+  border-radius: 4px; }
+  button:hover {
+    opacity: 0.75; }
+
+.buttonA {
+  width: 65px;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 14px;
+  background: transparent;
+  color: #fff; }
+  .buttonA:hover {
+    opacity: 1; }
+
+.buttonB {
+  width: 65px;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 14px;
+  background: #fff;
+  color: #3498db; }
+  .buttonB:hover {
+    opacity: 1; }
+
+/*MENU*/
+.menu {
+  background: #3498db;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box; }
+  .menu .menu-item {
+    float: left;
+    padding: 0 20px; }
+    @media (max-width: 700px) {
+      .menu .menu-item {
+        padding: 0 10px; } }
+    @media (max-width: 550px) {
+      .menu .menu-item {
+        padding: 0;
+        width: 100%;
+        float: center; } }
+  .menu .right {
+    float: right;
+    border-right: 0; }
+    @media (max-width: 700px) {
+      .menu .right {
+        padding: 0 10px; } }
+    @media (max-width: 550px) {
+      .menu .right {
+        padding: 0;
+        width: 100%;
+        float: center; } }
+  @media (max-width: 550px) {
+    .menu {
+      height: 100px; } }
+  @media (max-width: 300px) {
+    .menu {
+      height: 150px; } }
+
+/*CONTACT*/
+.contacts {
+  color: #2c3e50; }
+  .contacts .no {
+    margin-top: 15px; }
+
+.contact {
+  float: left;
+  width: 31%;
+  height: auto;
+  margin: 10px 1%;
+  padding: 10px;
+  background: #fff;
+  color: #2c3e50;
+  position: relative;
+  border: 1px solid #ddd;
+  box-sizing: border-box; }
+  .contact .title {
+    color: #242428;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 5px; }
+  .contact .contact-row {
+    height: 30px;
+    line-height: 30px; }
+    .contact .contact-row .key {
+      float: left;
+      width: 50px; }
+    .contact .contact-row .value {
+      text-align: left;
+      float: left; }
+  .contact .delete {
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px;
+    cursor: pointer; }
+    .contact .delete:hover {
+      transition: 0.5s;
+      color: #c0392b; }
+  .contact .edit {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px;
+    cursor: pointer; }
+    .contact .edit:hover {
+      transition: 0.5s;
+      color: #9fa7b8; }
+  @media (max-width: 900px) {
+    .contact {
+      width: 48%; } }
+  @media (max-width: 700px) {
+    .contact {
+      width: 98%; } }
+
+.del {
+  border-color: #c0392b; }
+
+/*ADD*/
+.add {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  line-height: 50px;
+  border-radius: 50px;
+  margin: 20px;
+  font-size: 24px;
+  background: #27ae60;
+  color: #fff;
+  cursor: pointer; }
+  .add:hover {
+    opacity: 0.75; }
+
+/*POPUP*/
+.popup {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.33); }
+  .popup .contact {
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    right: auto;
+    width: 270px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -135px;
+    border: 1px solid #ddd;
+    padding: 0;
+    box-sizing: border-box; }
+    .popup .contact .contact-row {
+      height: 60px;
+      line-height: 60px; }
+      .popup .contact .contact-row .key {
+        float: left;
+        width: 20%; }
+      .popup .contact .contact-row .value {
+        float: left;
+        width: 80%; }
+        .popup .contact .contact-row .value .valueError {
+          background: #fcc; }
+    .popup .contact .title {
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #ccc; }
+
+/*# sourceMappingURL=style.css.map */
